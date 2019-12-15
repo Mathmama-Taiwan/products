@@ -9,4 +9,13 @@ print(products)
 
 for p in products:
 	print(p[0], '的價格是', p[1])
-	
+
+# 'abc' + '123' = 'abc123'
+# 'abc' * 3 = 'abcabcabc'
+
+with open('products.csv', 'w', encoding='utf-8') as f: # 'w' 寫入模式
+# 使用utf-8編碼中文寫入才不會是亂碼
+	f.write('商品,價格\n')
+	for p in products:
+		f.write(p[0] + ',' + p[1] + '\n') # f.write 寫入
+	# csv檔用逗點區隔 \n是換行
